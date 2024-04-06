@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Data;
 using SalesWebMVC.Models;
-
+using SalesWebMVC.Service;
 namespace SalesWebMVC
 {
 	public class Startup
@@ -41,6 +41,7 @@ namespace SalesWebMVC
 				options.UseMySql(Configuration.GetConnectionString("SalesWebMVCContext"), builder =>
 				builder.MigrationsAssembly("SalesWebMVC")));
 			services.AddScoped<SeendingService>();
+			services.AddScoped<SellerService>();
 
 		}
 
