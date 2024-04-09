@@ -1,25 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SalesWebMVC.Models;
-using SalesWebMVC.Models.Enums;
+using System.Threading.Tasks;
+using SalesWebMvc.Models;
+using SalesWebMvc.Models.Enums;
 
-namespace SalesWebMVC.Data
+namespace SalesWebMvc.Data
 {
-    public class SeendingService
+    public class SeedingService
     {
-        private SalesWebMVCContext _context;
+        private SalesWebMvcContext _context;
 
-        public SeendingService(SalesWebMVCContext context)
+        public SeedingService(SalesWebMvcContext context)
         {
             _context = context;
         }
 
         public void Seed()
         {
-            if (_context.SalesRecord.Any() || _context.Department.Any() || _context.Seller.Any())
+            if (_context.Department.Any() ||
+                _context.Seller.Any() ||
+                _context.SalesRecord.Any())
             {
-                return; // DB Has Been Seeded
+                return; // DB has been seeded
             }
 
             Department d1 = new Department(1, "Computers");
@@ -76,8 +79,6 @@ namespace SalesWebMVC.Data
             );
 
             _context.SaveChanges();
-
-
         }
     }
 }
