@@ -10,4 +10,14 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\SalesRecords\GroupingSearch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
